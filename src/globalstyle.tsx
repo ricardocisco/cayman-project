@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
-        font-family: "Montserrat", sans-serif;
+        font-family: "Inter", sans-serif;
         box-sizing: border-box;
     }
 `;
