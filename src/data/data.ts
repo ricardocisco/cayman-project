@@ -1,4 +1,4 @@
-export const resorts = [
+export const resortsData = [
   {
     name: "Seven Mile Beach Resort",
     capacity: 4,

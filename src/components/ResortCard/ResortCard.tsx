@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { resorts } from "../../data/data";
+import { resortsData } from "../../data/data";
 import { FaBed } from "react-icons/fa";
 import { MdPeopleAlt } from "react-icons/md";
 import styled from "styled-components";
@@ -11,6 +11,10 @@ interface CardProps {
   beds: number;
   name: string;
   price_per_night: number;
+}
+
+interface ResortListProps {
+  resorts: CardProps[];
 }
 
 export const CardWrapper = styled.div`
@@ -68,7 +72,7 @@ export const CardDesc = styled.p`
   }
 `;
 
-const Icon = styled.i`
+export const Icon = styled.i`
   display: flex;
   align-items: center;
   color: #797878;
@@ -76,12 +80,12 @@ const Icon = styled.i`
   margin-right: 5px;
 `;
 
-export default function ResortCard() {
-  const [resort, setResort] = useState<CardProps[]>(resorts);
+const ResortCard: React.FC<ResortListProps> = () => {
+  const [resortList, setResortList] = useState(resortsData);
 
   return (
     <CardWrapper>
-      {resort.slice(0, 6).map((item, index) => (
+      {resortList.map((item, index) => (
         <CardBox key={index}>
           <CardImage src={item.image} alt={item.name} />
           <CardTitle>{item.island}</CardTitle>
@@ -105,4 +109,6 @@ export default function ResortCard() {
       ))}
     </CardWrapper>
   );
-}
+};
+
+export default ResortCard;

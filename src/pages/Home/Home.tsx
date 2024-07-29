@@ -3,7 +3,7 @@ import styled from "styled-components";
 import imgBg from "../../assets/bgazul.jpg";
 import { Link } from "react-router-dom";
 import SliderFeedback from "../../components/SliderFeedback/SliderFeedback";
-import ResortCard, {
+import {
   CardBox,
   CardDesc,
   CardImage,
@@ -11,7 +11,7 @@ import ResortCard, {
   CardWrapper,
 } from "../../components/ResortCard/ResortCard";
 import Footer from "../../components/Footer/Footer";
-import { useState } from "react";
+import HomeResort from "../../components/ResortCard/HomeResort";
 
 const BoxMain = styled.div`
   height: 100%;
@@ -216,7 +216,6 @@ const NewsWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
   @media (max-width: 1023px) {
     height: inherit;
   }
@@ -234,6 +233,7 @@ const NewsText = styled.h1`
   font-size: 42px;
   font-weight: 500;
   margin-top: 40px;
+  margin-bottom: 20px;
 `;
 
 const NewsBox = styled.div`
@@ -318,7 +318,7 @@ export default function Home() {
             </TextDesc>
             <LinkStyled to="/">View all villas → </LinkStyled>
           </TextDiv>
-          <ResortCard />
+          <HomeResort />
           <LinkButton to="/">View all villas →</LinkButton>
         </TextBox>
         <WhyContainer>

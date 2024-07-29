@@ -57,13 +57,6 @@ const Icon = styled.i`
   }
 `;
 
-const IconStyle = styled.i`
-  padding: 0 5px;
-  align-content: center;
-  cursor: pointer;
-  font-size: 22px;
-`;
-
 const LinkStyled = styled(Link)`
   margin: 25px;
   text-decoration: none;
@@ -77,10 +70,13 @@ const LinkStyled = styled(Link)`
   }
 `;
 
-const Title = styled.h1`
-  font-size: 24px;
+const Title = styled(Link)`
+  font-size: 26px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 800;
   @media (min-width: 769px) and (max-width: 1300px) {
-    font-size: 18px;
+    font-size: 20px;
   }
 `;
 
@@ -88,7 +84,7 @@ export default function Navbar() {
   const [active, setActive] = useState(false);
   return (
     <BoxNavbar>
-      <Title>Grand Cayman</Title>
+      <Title to="/">Grand Cayman</Title>
       <Icon
         onClick={() => {
           setActive(!active);
@@ -97,7 +93,7 @@ export default function Navbar() {
         {!active ? <FaBars /> : <AiOutlineClose />}
       </Icon>
       <UlStyled active={active}>
-        <LinkStyled to="/">Villas</LinkStyled>
+        <LinkStyled to="/villas">Villas</LinkStyled>
         <LinkStyled to="/">Specials</LinkStyled>
         <LinkStyled to="/">Yachts</LinkStyled>
         <LinkStyled to="/">Information</LinkStyled>
