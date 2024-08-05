@@ -1,9 +1,13 @@
+import React, { useState } from "react";
 import styled from "styled-components";
-import Navbar from "../../components/Navbar/Navbar";
-import imgBg from "../../assets/bgazul.jpg";
+import { FaBed } from "react-icons/fa";
+import { MdPeopleAlt } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
 import { GoPerson } from "react-icons/go";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import { resortsData } from "../../data/data";
 import ResortCard, {
   CardBox,
   CardDesc,
@@ -12,109 +16,79 @@ import ResortCard, {
   CardTitle,
   CardWrapper,
 } from "../../components/ResortCard/ResortCard";
-import Footer from "../../components/Footer/Footer";
-import React, { useState } from "react";
-import { resortsData } from "../../data/data";
-import { FaBed } from "react-icons/fa";
-import { MdPeopleAlt } from "react-icons/md";
-
-const ImageHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(${imgBg});
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 200px;
-`;
-
-const SearchIsland = styled.div`
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-`;
-
-const SearchInput = styled.input`
-  border: none;
-  padding: 5px;
-  &:focus {
-    outline: none;
-    border: none;
-  }
-`;
-
-const Icon = styled.i`
-  display: flex;
-  align-items: center;
-  font-size: 26px;
-  padding: 5px;
-  color: #707070;
-`;
-
-const SelectDiv = styled.div`
-  display: flex;
-  margin: 0 10px 0 10px;
-  align-items: center;
-  border-left: 1px solid #707070;
-  padding: 5px 8px;
-`;
-
-const SelectBox = styled.select`
-  border: none;
-  &:focus {
-    outline: none;
-    border: none;
-  }
-`;
-
-const SelectOption = styled.option`
-  border: none;
-  padding: 10px;
-`;
-
-const ResortsBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px;
-`;
-
-const ResortText = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`;
+import {
+  BackDiv,
+  BackLink,
+  BackText,
+  BackTitle,
+  Card,
+  CardBack,
+  CardFront,
+  Icon,
+  ImageHeader,
+  ResortsBox,
+  ResortText,
+  SearchInput,
+  SearchIsland,
+  SelectBox,
+  SelectDiv,
+  SelectOption,
+} from "./style";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { viewVilla, villasProps } from "../../redux/reducers/itens";
+import {
+  mudarBusca,
+  mudarCapacidade,
+  mudarResort,
+} from "../../redux/reducers/busca";
 
 export default function About() {
-  const [selectedIsland, setSelectedisland] = useState<string>("");
-  const [selectedPeople, setSelectedPeople] = useState<string>("");
-  const [querySearch, setQuerySearch] = useState<string>("");
-  const [resortList, setResortList] = useState(resortsData);
+  const villas = useSelector((state: RootState) => state.villas);
+  const dispatch = useDispatch();
+  const changeBusca = useSelector((state: RootState) => state.busca.query);
+  const changeResort = useSelector(
+    (state: RootState) => state.busca.selectIsland
+  );
+  const changeCapacity = useSelector(
+    (state: RootState) => state.busca.selectPeople
+  );
 
-  const handleSelectedIsland = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedisland(event.target.value);
+  const handleDispatch = (item: villasProps) => {
+    dispatch(viewVilla(item));
   };
 
-  const handleSelectedPeople = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedPeople(event.target.value);
+  const handleSelectResort = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(mudarResort(e.target.value));
   };
 
-  const handleQuerySearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuerySearch(event.target.value);
+  const handleSelectCapacity = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(mudarCapacidade(e.target.value));
   };
 
-  const filteredList = resortList.filter((item) => {
-    return (
-      (selectedIsland === "" || item.island === selectedIsland) &&
-      (selectedPeople === "" || item.capacity === selectedPeople) &&
-      (querySearch === "" ||
-        item.name.toLowerCase().includes(querySearch.toLowerCase()))
-    );
+  const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(mudarBusca(e.target.value));
+  };
+
+  const [flippedCards, setFlippedCards] = useState<boolean[]>(
+    new Array(villas.length).fill(false)
+  );
+
+  const handleFlip = (index: number) => {
+    const newFlippedCards = [...flippedCards];
+    newFlippedCards[index] = !newFlippedCards[index];
+    setFlippedCards(newFlippedCards);
+  };
+
+  const filteredList = villas.filter((item) => {
+    const matchesResort = changeResort ? item.island === changeResort : true;
+    const matchesCapacity = changeCapacity
+      ? item.capacity === changeCapacity
+      : true;
+    const matchesQuery = item.name
+      .toLowerCase()
+      .includes(changeBusca.toLowerCase());
+    return matchesResort && matchesQuery && matchesCapacity;
   });
 
   return (
@@ -122,22 +96,24 @@ export default function About() {
       <Navbar />
       <ImageHeader>
         <SearchIsland>
-          <Icon>
-            <IoIosSearch />
-          </Icon>
-          <SearchInput
-            type="text"
-            value={querySearch}
-            onChange={handleQuerySearch}
-            placeholder="Search by villa name"
-          ></SearchInput>
+          <SelectDiv>
+            <Icon>
+              <IoIosSearch />
+            </Icon>
+            <SearchInput
+              type="text"
+              value={changeBusca}
+              onChange={handleQuery}
+              placeholder="Search by villa name"
+            />
+          </SelectDiv>
           <SelectDiv>
             <Icon>
               <CiLocationOn />
             </Icon>
             <SelectBox
-              value={selectedIsland}
-              onChange={handleSelectedIsland}
+              value={changeResort}
+              onChange={handleSelectResort}
               name="select"
             >
               <SelectOption value="">Island</SelectOption>
@@ -150,8 +126,8 @@ export default function About() {
               <GoPerson />
             </Icon>
             <SelectBox
-              value={selectedPeople}
-              onChange={handleSelectedPeople}
+              value={changeCapacity}
+              onChange={handleSelectCapacity}
               name="select"
             >
               <SelectOption value="">People</SelectOption>
@@ -171,24 +147,46 @@ export default function About() {
         <CardWrapper>
           {filteredList.map((item, index) => (
             <CardBox key={index}>
-              <CardImage src={item.image} alt={item.name} />
-              <CardTitle>{item.island}</CardTitle>
-              <CardDesc>{item.name}</CardDesc>
-              <CardTexts>
-                <p>
-                  <Icon>
-                    <FaBed />
-                  </Icon>
-                  {item.beds}
-                </p>
-                <p>
-                  <Icon>
-                    <MdPeopleAlt />
-                  </Icon>
-                  {item.capacity}
-                </p>
-                <p>${item.price_per_night}/noite</p>
-              </CardTexts>
+              <Card
+                flipped={flippedCards[index]}
+                onClick={() => handleFlip(index)}
+              >
+                <CardFront>
+                  <CardImage src={item.image} alt={item.name} />
+                  <CardTitle>{item.island}</CardTitle>
+                  <CardDesc>{item.name}</CardDesc>
+                  <CardTexts>
+                    <p>
+                      <Icon>
+                        <FaBed />
+                      </Icon>
+                      {item.beds}
+                    </p>
+                    <p>
+                      <Icon>
+                        <MdPeopleAlt />
+                      </Icon>
+                      {item.capacity}
+                    </p>
+                    <p>${item.price_per_night}/noite</p>
+                  </CardTexts>
+                </CardFront>
+                <CardBack>
+                  <BackDiv>
+                    <BackTitle>Havy Any Questions?</BackTitle>
+                    <BackText>
+                      With our knowledge of all the properties we can recommend
+                      the perfect villa for your vacation
+                    </BackText>
+                    <BackLink
+                      to={`/villas/${item.id}`}
+                      onClick={() => handleDispatch(item)}
+                    >
+                      Contact Us
+                    </BackLink>
+                  </BackDiv>
+                </CardBack>
+              </Card>
             </CardBox>
           ))}
         </CardWrapper>

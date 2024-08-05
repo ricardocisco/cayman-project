@@ -27,14 +27,10 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardBox = styled.div`
-  width: 330px;
   display: flex;
   flex-direction: column;
   text-align: start;
   padding: 8px;
-  &:hover {
-    scale: 1.05;
-  }
 `;
 
 export const CardTexts = styled.div`

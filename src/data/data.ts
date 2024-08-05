@@ -1,5 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const resortsData = [
   {
+    id: uuidv4(),
     name: "Seven Mile Beach Resort",
     capacity: 4,
     beds: 2,
@@ -9,6 +12,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "The Ritz-Carlton",
     capacity: 2,
     beds: 1,
@@ -18,6 +22,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Westin Grand Cayman",
     capacity: 4,
     beds: 2,
@@ -27,6 +32,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Kimpton Seafire Resort",
     capacity: 3,
     beds: 2,
@@ -36,6 +42,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Grand Cayman Marriott",
     capacity: 4,
     beds: 2,
@@ -45,6 +52,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Sunshine Suites Resort",
     capacity: 3,
     beds: 2,
@@ -54,6 +62,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "The Meridian",
     capacity: 6,
     beds: 3,
@@ -63,6 +72,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Aqua Bay Club",
     capacity: 4,
     beds: 2,
@@ -72,6 +82,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Coral Stone Club",
     capacity: 5,
     beds: 3,
@@ -81,6 +92,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Plantation Village Beach Resort",
     capacity: 4,
     beds: 2,
@@ -89,6 +101,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Turtle Nest Inn",
     capacity: 3,
     beds: 2,
@@ -98,6 +111,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Comfort Suites Seven Mile Beach",
     capacity: 4,
     beds: 2,
@@ -107,6 +121,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Regal Beach Club",
     capacity: 4,
     beds: 2,
@@ -116,6 +131,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Wyndham Reef Resort",
     capacity: 4,
     beds: 2,
@@ -125,6 +141,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Margaritaville Beach Resort",
     capacity: 4,
     beds: 2,
@@ -134,6 +151,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Beachcomber Grand Cayman",
     capacity: 6,
     beds: 3,
@@ -142,6 +160,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Cayman Kai",
     capacity: 4,
     beds: 2,
@@ -151,6 +170,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Holiday Inn Resort",
     capacity: 4,
     beds: 2,
@@ -160,6 +180,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Compass Point Dive Resort",
     capacity: 4,
     beds: 2,
@@ -169,6 +190,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "The Anchorage",
     capacity: 6,
     beds: 3,
@@ -177,6 +199,7 @@ export const resortsData = [
     island: "Grand Cayman",
   },
   {
+    id: uuidv4(),
     name: "Little Cayman Beach Resort",
     capacity: 4,
     beds: 2,
@@ -186,6 +209,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Southern Cross Club",
     capacity: 2,
     beds: 1,
@@ -195,6 +219,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Pirates Point Resort",
     capacity: 3,
     beds: 2,
@@ -204,6 +229,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Paradise Villas",
     capacity: 2,
     beds: 1,
@@ -213,6 +239,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "The Club at Little Cayman",
     capacity: 4,
     beds: 2,
@@ -222,6 +249,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Cayman Brac Beach Resort",
     capacity: 4,
     beds: 2,
@@ -231,6 +259,7 @@ export const resortsData = [
     island: "Cayman Brac",
   },
   {
+    id: uuidv4(),
     name: "Conch Club Condos",
     capacity: 6,
     beds: 3,
@@ -240,6 +269,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Little Cayman Escape",
     capacity: 4,
     beds: 2,
@@ -249,6 +279,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Sailfish Beach Villas",
     capacity: 4,
     beds: 2,
@@ -258,6 +289,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "The Hungry Iguana",
     capacity: 2,
     beds: 1,
@@ -267,6 +299,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Point of Sand",
     capacity: 3,
     beds: 2,
@@ -276,6 +309,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Blossom Village Cottage",
     capacity: 4,
     beds: 2,
@@ -285,6 +319,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Head O' Bay",
     capacity: 4,
     beds: 2,
@@ -294,6 +329,7 @@ export const resortsData = [
     island: "Little Cayman",
   },
   {
+    id: uuidv4(),
     name: "Kirkconnell's Market Lodge",
     capacity: 3,
     beds: 2,
