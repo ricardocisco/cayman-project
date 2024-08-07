@@ -6,6 +6,19 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import styled from "styled-components";
 import { CiCalendar } from "react-icons/ci";
+import { MdLocationPin } from "react-icons/md";
+import { CiSun } from "react-icons/ci";
+import {
+  BsCloudsFill,
+  BsCloudRainFill,
+  BsCloudRainHeavyFill,
+  BsFillCloudLightningRainFill,
+  BsFillCloudSnowFill,
+  BsFillCloudHaze2Fill,
+  BsCloudHazeFill,
+  BsCloudFog2Fill,
+} from "react-icons/bs";
+import { GiTornado } from "react-icons/gi";
 
 const ContactBox = styled.div`
   display: flex;
@@ -27,19 +40,42 @@ const ContactWrapper = styled.div`
 const ContactAbout = styled.div`
   display: flex;
   flex-direction: column;
-  width: 18rem;
-  height: 15rem;
+  width: 20rem;
+  height: 14rem;
   background-color: #def6fd83;
-  padding: 20px;
-  margin-left: 15px;
+  padding: 10px;
+  margin-left: 10px;
   margin-bottom: 15px;
 `;
 
 const BoxWeather = styled(ContactAbout)`
+  flex-direction: row;
   background-color: inherit;
   align-items: center;
+  justify-content: space-around;
   border: 1px solid #e1e1e1;
   border-radius: 15px;
+`;
+
+const TempBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const IconBox = styled.i`
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+`;
+
+const DescBox = styled.p`
+  font-size: 34px;
+`;
+
+const DescCity = styled(DescBox)`
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
 `;
 
 const PriceBox = styled(ContactAbout)`
@@ -144,18 +180,79 @@ export default function Contact() {
   const villas = useSelector((state: RootState) => state.villas);
   const card = villas.find((c) => c.id === idVilla);
 
-  // const [cidade, setCidade] = useState("");
-  // const [data, setData] = useState({});
-  // const api = "b19c4ee03470a1c54f5d1a455517bc85";
+  const [cidade, setCidade] = useState("");
+  const [data, setData] = useState(null);
+  const api = "b19c4ee03470a1c54f5d1a455517bc85";
 
-  // const Weather = async () => {
-  //   const response = await fetch(
-  //     `https://api.openweathermap.org/data/2.5/weather?q=${card?.city}&appid=${api}&units=metric`
-  //   );
-  //   const data = await response.json();
-  //   console.log(data);
-  //   setData(data);
-  // };
+  const Weather = async (city) => {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`
+    );
+    const data = await response.json();
+    console.log(data);
+    setData(data);
+  };
+
+  useEffect(() => {
+    if (card) {
+      setCidade(card.city);
+    }
+  }, [card]);
+
+  useEffect(() => {
+    if (cidade) {
+      Weather(cidade);
+    }
+  }, [cidade]);
+
+  const getWeatherDescription = (main) => {
+    switch (main) {
+      case "Clear":
+        return <CiSun />;
+      case "Clouds":
+        return <BsCloudsFill />;
+      case "Rain":
+        return <BsCloudRainHeavyFill />;
+      case "Drizzle":
+        return <BsCloudRainFill />;
+      case "Thunderstorm":
+        return <BsFillCloudLightningRainFill />;
+      case "Snow":
+        return <BsFillCloudSnowFill />;
+      case "Mist":
+        return <BsFillCloudHaze2Fill />;
+      case "Smoke":
+        return <BsCloudHazeFill />;
+      case "Haze":
+        return <BsCloudHazeFill />;
+      case "Dust":
+        return "Poeira";
+      case "Fog":
+        return <BsCloudFog2Fill />;
+      case "Sand":
+        return "Areia";
+      case "Ash":
+        return "Cinzas";
+      case "Squall":
+        return "Rajada";
+      case "Tornado":
+        return <GiTornado />;
+      default:
+        return main;
+    }
+  };
+
+  const formatTime = (timestamp) => {
+    return new Date(timestamp * 1000).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+  };
+
+  const sunrise = data ? formatTime(data.sys.sunrise) : "";
+  const sunset = data ? formatTime(data.sys.sunset) : "";
+  const dt = data ? formatTime(data.dt) : "";
 
   return (
     <>
@@ -204,14 +301,32 @@ export default function Contact() {
                 <LinkStyled to="">Check Availability</LinkStyled>
               </PriceWrapper>
             </PriceBox>
-            <BoxWeather>
-              {/* <p>Nome da Cidade: {data.name}</p>
-              <p>Temperatura: °C</p>
-              <p>Temperatura Maxima: °C</p>
-              <p>Temperatura Minima: °C</p>
-              <p>Descricao: </p>
-              <p>Descricao: </p> */}
-            </BoxWeather>
+            {data && (
+              <BoxWeather>
+                <div>
+                  <TempBox>
+                    <IconBox>
+                      {getWeatherDescription(data.weather[0].main)}
+                    </IconBox>
+                    <DescBox>{data.main.temp.toFixed(0)}°C</DescBox>
+                  </TempBox>
+                  <TempBox>
+                    <IconBox>
+                      <MdLocationPin />
+                    </IconBox>
+                    <DescCity>{data.name}</DescCity>
+                  </TempBox>
+                  {/* <p>Temp Max: {data.main.temp_max}°C</p>
+                  <p>Temp Min: {data.main.temp_min}°C</p>
+                  <p>Humidade: {data.main.humidity}</p> */}
+                </div>
+                <div>
+                  <DescCity>Time: {dt}</DescCity>
+                  <DescCity>Sunrise: {sunrise}</DescCity>
+                  <DescCity>Sunset: {sunset}</DescCity>
+                </div>
+              </BoxWeather>
+            )}
           </div>
         </ContactWrapper>
       </ContactBox>
