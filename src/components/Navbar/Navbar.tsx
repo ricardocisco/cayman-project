@@ -53,7 +53,7 @@ const Icon = styled.i`
     top: 16px;
     right: 20px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 9999;
   }
 `;
 

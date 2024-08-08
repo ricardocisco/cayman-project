@@ -26,6 +26,9 @@ const ImageHeader = styled.div`
   background-size: cover;
   width: 100%;
   height: 500px;
+  @media (max-width: 768px) {
+    height: 300px;
+  }
 `;
 
 const ImageBox = styled.div`
@@ -52,6 +55,11 @@ const ImageBox = styled.div`
     padding: 10px 30px;
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    & h2 {
+      font-size: 32px;
+    }
+  }
 `;
 
 const TextBox = styled.div`
@@ -70,6 +78,10 @@ const TextDiv = styled.div`
   align-items: center;
   text-align: center;
   padding: 60px;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 20px;
+  }
 `;
 
 const TextTitle = styled.h1`
@@ -210,6 +222,11 @@ const FeedbackContainer = styled.div`
     font-size: 48px;
     font-weight: 400;
   }
+  @media (max-width: 768px) {
+    & h1 {
+      font-size: 32px;
+    }
+  }
 `;
 
 const NewsWrapper = styled.div`
@@ -234,6 +251,9 @@ const NewsText = styled.h1`
   font-weight: 500;
   margin-top: 40px;
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const NewsBox = styled.div`
@@ -241,6 +261,10 @@ const NewsBox = styled.div`
   @media (max-width: 1023px) {
     flex-direction: column;
     align-items: center;
+  }
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
   }
 `;
 

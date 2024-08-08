@@ -146,7 +146,7 @@ export default function About() {
         </ResortText>
         <CardWrapper>
           {filteredList.map((item, index) => (
-            <CardBox key={index}>
+            <CardBox key={item.id}>
               <Card
                 flipped={flippedCards[index]}
                 onClick={() => handleFlip(index)}

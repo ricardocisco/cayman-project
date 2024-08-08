@@ -30,11 +30,18 @@ const ContactBox = styled.div`
     width: 100%;
     padding: 0 5rem;
   }
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
 `;
 
 const ContactWrapper = styled.div`
   display: flex;
   margin-top: 50px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const ContactAbout = styled.div`
@@ -46,6 +53,9 @@ const ContactAbout = styled.div`
   padding: 10px;
   margin-left: 10px;
   margin-bottom: 15px;
+  @media (max-width: 768px) {
+    margin-top: 25px;
+  }
 `;
 
 const BoxWeather = styled(ContactAbout)`

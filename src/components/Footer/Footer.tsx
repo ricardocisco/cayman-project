@@ -16,6 +16,7 @@ const FooterBox = styled.div`
   justify-content: space-around;
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: 25px;
   }
 `;
 
