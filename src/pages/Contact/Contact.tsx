@@ -316,9 +316,6 @@ export default function Contact() {
                     </IconBox>
                     <DescCity>{data.name}</DescCity>
                   </TempBox>
-                  {/* <p>Temp Max: {data.main.temp_max}°C</p>
-                  <p>Temp Min: {data.main.temp_min}°C</p>
-                  <p>Humidade: {data.main.humidity}</p> */}
                 </div>
                 <div>
                   <DescCity>Time: {dt}</DescCity>

@@ -11,6 +11,8 @@ import ResortCard, {
 import { resortsData } from "../../data/data";
 import { FaBed } from "react-icons/fa";
 import { MdPeopleAlt } from "react-icons/md";
+import { useSelector } from "react-redux";
+import { RootState } from "@reduxjs/toolkit/query";
 
 interface CardProps {
   image: string;
@@ -26,12 +28,12 @@ interface ResortListProps {
 }
 
 const HomeResort: React.FC<ResortListProps> = () => {
-  const [resortList, setResortList] = useState(resortsData);
+  const villas = useSelector((state: RootState) => state.villas);
 
   return (
     <CardWrapper>
-      {resortList.slice(0, 6).map((item, index) => (
-        <CardBox key={index}>
+      {villas.slice(0, 6).map((item) => (
+        <CardBox key={item.id}>
           <CardImage src={item.image} alt={item.name} />
           <CardTitle>{item.island}</CardTitle>
           <CardDesc>{item.name}</CardDesc>

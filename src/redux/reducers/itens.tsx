@@ -15,7 +15,7 @@ export interface villasProps {
 
 const INITIAL_STATE: villasProps[] = [
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "Seven Mile Beach Resort",
     capacity: "4",
     beds: 2,
@@ -25,10 +25,10 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Situado na famosa Seven Mile Beach, este resort oferece acomodações confortáveis e acesso direto a uma das praias mais belas do Caribe. Ideal para famílias e casais.",
+      "Situado na famosa Seven Mile Beach, o Seven Mile Beach Resort oferece acomodações confortáveis e acesso direto a uma das praias mais belas do Caribe. Este resort é ideal para famílias e casais que desejam relaxar e desfrutar do ambiente sereno e das águas cristalinas. O resort dispõe de uma variedade de comodidades, incluindo piscinas de água doce, áreas de lazer para crianças, e atividades aquáticas como snorkeling e mergulho. Os hóspedes podem começar o dia com um delicioso café da manhã servido no restaurante do resort, que oferece uma ampla seleção de pratos quentes e frios, frutas frescas, sucos e café. À noite, o resort organiza eventos temáticos e jantares especiais à beira-mar, proporcionando uma experiência gastronômica inesquecível.",
   },
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "The Ritz-Carlton",
     capacity: "2",
     beds: 1,
@@ -38,10 +38,10 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Luxo e elegância se encontram no The Ritz-Carlton, com acomodações requintadas, serviço impecável e uma localização privilegiada em Grand Cayman.",
+      "Luxo e elegância se encontram no The Ritz-Carlton, que oferece acomodações requintadas e um serviço impecável. Localizado em uma posição privilegiada em Grand Cayman, este resort é a escolha perfeita para aqueles que procuram uma experiência de férias de alto padrão. O resort dispõe de piscinas de borda infinita, um spa de classe mundial, e várias opções gastronômicas que incluem restaurantes premiados e bares elegantes. Os hóspedes podem desfrutar de um café da manhã gourmet no restaurante principal, que oferece uma ampla variedade de pratos internacionais e locais, preparados com ingredientes frescos e de alta qualidade. Além disso, o The Ritz-Carlton organiza atividades recreativas, como aulas de culinária, degustações de vinhos, e excursões de aventura, garantindo uma estadia memorável para todos os hóspedes.",
   },
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "Westin Grand Cayman",
     capacity: "4",
     beds: 2,
@@ -51,10 +51,10 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Com vistas deslumbrantes para o oceano e comodidades de primeira classe, o Westin Grand Cayman é perfeito para umas férias relaxantes na praia.",
+      "Com vistas deslumbrantes para o oceano e comodidades de primeira classe, o Westin Grand Cayman é o destino ideal para umas férias relaxantes na praia. Localizado na icônica Seven Mile Beach, o resort oferece aos hóspedes uma experiência inesquecível com suas piscinas luxuosas, cabanas privadas, e um centro de bem-estar totalmente equipado. Os hóspedes podem participar de uma variedade de atividades aquáticas, como paddleboarding, caiaque, e passeios de barco. O café da manhã é uma ocasião especial no Westin, com um buffet repleto de opções deliciosas, desde omeletes feitos na hora até pastelarias frescas e frutas tropicais. Para os que preferem uma refeição tranquila, o serviço de quarto está disponível 24 horas por dia, proporcionando conforto e conveniência.",
   },
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "Kimpton Seafire Resort",
     capacity: "3",
     beds: 2,
@@ -64,12 +64,12 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Com uma arquitetura moderna e um ambiente vibrante, o Kimpton Seafire Resort é um refúgio perfeito para quem busca luxo e estilo à beira-mar.",
+      "Com uma arquitetura moderna e um ambiente vibrante, o Kimpton Seafire Resort é um refúgio perfeito para quem busca luxo e estilo à beira-mar. O resort oferece acomodações elegantes com vistas panorâmicas do oceano, e uma variedade de comodidades que incluem um spa de luxo, várias piscinas, e restaurantes gourmet. Os hóspedes podem participar de aulas de yoga ao ar livre, excursões de mergulho, e passeios de bicicleta pela ilha. O café da manhã no Kimpton Seafire é uma experiência culinária de alto nível, com pratos preparados na hora e ingredientes frescos de origem local. Os hóspedes também podem desfrutar de coquetéis artesanais e pratos leves nos bares e lounges do resort, criando a atmosfera perfeita para relaxar e socializar.",
   },
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "Grand Cayman Marriott",
-    capacity: "4",
+    capacity: " 4",
     beds: 2,
     price_per_night: 480,
     image:
@@ -77,10 +77,10 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Este resort oferece uma mistura perfeita de conforto e conveniência, com acesso fácil à praia e diversas atividades para todas as idades.",
+      "O Grand Cayman Marriott oferece uma mistura perfeita de conforto e conveniência, com acesso fácil à praia e diversas atividades para todas as idades. Localizado na famosa Seven Mile Beach, o resort dispõe de acomodações confortáveis, piscinas de água doce, e um centro de fitness moderno. Os hóspedes podem explorar a beleza natural da ilha com passeios de snorkel e mergulho, ou simplesmente relaxar nas cabanas à beira-mar. O café da manhã é servido em estilo buffet no restaurante principal, com uma ampla variedade de pratos quentes e frios, frutas frescas, sucos, e café. À noite, o resort oferece jantares temáticos e entretenimento ao vivo, garantindo uma experiência divertida e envolvente para toda a família.",
   },
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "Sunshine Suites Resort",
     capacity: "3",
     beds: 2,
@@ -90,10 +90,10 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Uma opção acessível e acolhedora em Grand Cayman, o Sunshine Suites Resort oferece acomodações confortáveis e um ambiente amigável para famílias.",
+      "Uma opção acessível e acolhedora em Grand Cayman, o Sunshine Suites Resort oferece acomodações confortáveis e um ambiente amigável para famílias. Localizado próximo à Seven Mile Beach, o resort dispõe de uma piscina ao ar livre, um restaurante casual, e uma variedade de atividades recreativas. Os hóspedes podem aproveitar o serviço de aluguel de bicicletas para explorar a ilha, ou participar de excursões de snorkeling e mergulho. O café da manhã é servido diariamente no restaurante do resort, com uma seleção de pratos quentes e frios, frutas frescas, e bebidas. O Sunshine Suites Resort é conhecido por seu atendimento amigável e ambiente acolhedor, tornando-se a escolha ideal para uma escapada relaxante em Grand Cayman.",
   },
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "The Meridian",
     capacity: "6",
     beds: 3,
@@ -103,10 +103,10 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Localizado na famosa Seven Mile Beach, o Meridian oferece villas espaçosas e luxuosas, perfeitas para grupos e famílias que desejam desfrutar do melhor de Grand Cayman.",
+      "Localizado na famosa Seven Mile Beach, o Meridian oferece villas espaçosas e luxuosas, perfeitas para grupos e famílias que desejam desfrutar do melhor de Grand Cayman. Cada villa possui uma cozinha totalmente equipada, áreas de estar amplas, e varandas com vistas deslumbrantes do oceano. O resort dispõe de piscinas ao ar livre, um centro de fitness, e acesso direto à praia. Os hóspedes podem começar o dia com um café da manhã preparado na sua própria villa ou visitar um dos restaurantes locais nas proximidades. O Meridian também oferece serviços de concierge para ajudar os hóspedes a planejar atividades e excursões, garantindo uma estadia personalizada e inesquecível.",
   },
   {
-    id: uuidv4(),
+    id: "uuidv4()",
     name: "Aqua Bay Club",
     capacity: "4",
     beds: 2,
@@ -116,7 +116,7 @@ const INITIAL_STATE: villasProps[] = [
     island: "Grand Cayman",
     city: "George Town",
     description:
-      "Oferecendo vistas panorâmicas do oceano e acesso direto à praia, o Aqua Bay Club é ideal para umas férias tranquilas e relaxantes.",
+      "O Aqua Bay Club oferece uma experiência de férias tranquila e relaxante na deslumbrante Seven Mile Beach. Este resort íntimo dispõe de apartamentos espaçosos com varandas privativas e vistas panorâmicas do oceano. Os hóspedes podem desfrutar da piscina ao ar livre, jacuzzis, e áreas de churrasco, perfeitas para refeições ao ar livre com a família e amigos. O café da manhã é servido diariamente na área de refeições do resort, com uma seleção de pratos quentes e frios, frutas frescas, e bebidas. O Aqua Bay Club também oferece fácil acesso a atividades aquáticas, como snorkeling e mergulho, permitindo que os hóspedes explorem a rica vida marinha de Grand Cayman.",
   },
   {
     id: uuidv4(),

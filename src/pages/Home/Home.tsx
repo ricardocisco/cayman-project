@@ -316,10 +316,10 @@ export default function Home() {
               beachfront, family home just steps from the white sans and
               turquoise waters.
             </TextDesc>
-            <LinkStyled to="/">View all villas → </LinkStyled>
+            <LinkStyled to="/villas">View all villas → </LinkStyled>
           </TextDiv>
           <HomeResort />
-          <LinkButton to="/">View all villas →</LinkButton>
+          <LinkButton to="/villas">View all villas →</LinkButton>
         </TextBox>
         <WhyContainer>
           <h1>Why choose us?</h1>
