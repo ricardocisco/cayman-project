@@ -268,7 +268,7 @@ const NewsBox = styled.div`
   }
 `;
 
-const LinkButton = styled(Link)`
+export const LinkButton = styled(Link)`
   padding: 20px;
   background-color: #1a263e;
   color: #fff;

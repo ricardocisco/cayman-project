@@ -54,7 +54,6 @@ export const SelectDiv = styled.div`
   display: flex;
   margin: 0 20px 0 0;
   align-items: center;
-  border-left: 1px solid #707070;
   padding: 5px 8px;
   @media (max-width: 768px) {
     border-left: inherit;

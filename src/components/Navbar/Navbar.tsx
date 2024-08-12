@@ -97,7 +97,7 @@ export default function Navbar() {
         <LinkStyled to="/">Specials</LinkStyled>
         <LinkStyled to="/">Yachts</LinkStyled>
         <LinkStyled to="/">Information</LinkStyled>
-        <LinkStyled to="/">Ferry Schedules</LinkStyled>
+        <LinkStyled to="/schedules">Ferry Schedules</LinkStyled>
         <LinkStyled to="/">About</LinkStyled>
       </UlStyled>
     </BoxNavbar>
